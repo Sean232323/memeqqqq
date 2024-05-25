@@ -120,7 +120,7 @@ public class SigBypass {
         if (sigBypassLevel >= Constants.SIGBYPASS_LV_PM_OPENAT) {
             String cacheApkPath;
             try (ZipFile sourceFile = new ZipFile(context.getPackageResourcePath())) {
-                cacheApkPath = context.getCacheDir() + "/lspatch/origin/" + sourceFile.getEntry(ORIGINAL_APK_ASSET_PATH).getCrc() + ".apk";
+                cacheApkPath = context.getCacheDir() + "/memeq/origin/" + sourceFile.getEntry(ORIGINAL_APK_ASSET_PATH).getCrc() + ".apk";
             }
             org.lsposed.lspd.nativebridge.SigBypass.enableOpenatHook(context.getPackageResourcePath(), cacheApkPath);
         }

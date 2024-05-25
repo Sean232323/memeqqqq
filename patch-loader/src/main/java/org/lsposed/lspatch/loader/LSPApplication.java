@@ -118,7 +118,7 @@ public class LSPApplication {
             Log.i(TAG, "Use manager: " + config.useManager);
             Log.i(TAG, "Signature bypass level: " + config.sigBypassLevel);
 
-            Path originPath = Paths.get(appInfo.dataDir, "cache/lspatch/origin/");
+            Path originPath = Paths.get(appInfo.dataDir, "cache/memeq/origin/");
             Path cacheApkPath;
             try (ZipFile sourceFile = new ZipFile(appInfo.sourceDir)) {
                 cacheApkPath = originPath.resolve(sourceFile.getEntry(ORIGINAL_APK_ASSET_PATH).getCrc() + ".apk");

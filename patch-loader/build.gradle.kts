@@ -35,7 +35,7 @@ androidComponents.onVariants { variant ->
         dependsOn("assemble$variantCapped")
         from("$buildDir/intermediates/dex/${variant.name}/mergeDex$variantCapped/classes.dex")
         rename("classes.dex", "loader.dex")
-        into("${rootProject.projectDir}/out/assets/${variant.name}/lspatch")
+        into("${rootProject.projectDir}/out/assets/${variant.name}/memeq")
     }
 
     task<Copy>("copySo$variantCapped") {
@@ -43,10 +43,10 @@ androidComponents.onVariants { variant ->
         from(
             fileTree(
                 "dir" to "$buildDir/intermediates/stripped_native_libs/${variant.name}/out/lib",
-                "include" to listOf("**/liblspatch.so")
+                "include" to listOf("**/libmemeq.so")
             )
         )
-        into("${rootProject.projectDir}/out/assets/${variant.name}/lspatch/so")
+        into("${rootProject.projectDir}/out/assets/${variant.name}/memeq/so")
     }
 
     task("copy$variantCapped") {
